@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <header>
+        <h1 class="logo">LISTA ZADAŃ</h1>
+        <button class="btn addTaskBtn">NOWE ZADANIE</button>
+    </header>
     <!--FORMULARZ DODAWANIA NOWEGO ZADANIA-->
     <section class="newTask">
         <fieldset>
-            <legend>Nowe Zadania</legend>
+            <legend>Nowe Zadanie</legend>
                 <label>Temat Zadania: <br>
                     <input type="text" name="topic"/>
                 </label> <br>
@@ -23,15 +27,6 @@
                     <input type="radio" name="priority" value="4"/> 4
                     <input type="radio" name="priority" value="5"/> 5
                  </label> <br>
-                <p>/* WERSJA 2: */</p>
-                <p>Priorytet:</p>
-                <select name="priority">
-                    <option value="1">1</option>
-                    <option value="1">2</option>
-                    <option value="1">3</option>
-                    <option value="1">4</option>
-                    <option value="1">5</option>
-                </select>
                 <label>Opis: <br>
                     <textarea name="description" cols="30" rows="4" placeholder="Tutaj krótko opisz zadanie..."></textarea>
                 </label>
@@ -39,28 +34,33 @@
         </fieldset>
     </section>
     <!--WSTĘPNY WYGLĄD HTML-->
-    <header>
-        <h1 class="logo">LISTA ZADAŃ</h1>
-        <button class="btn addTaskBtn">DODAJ ZADANIE</button>
-    </header>
     <section id="sort">
         <button class="btn" id="expBtn">TERMIN</button>
         <button class="btn" id="priorityBtn">PRIORYTET</button>
         <button class="btn" id="doneBtn">ZROBIONE</button>
     </section>
-    <section class="task">
+    <section class="tasks">
         <header>
-            SKOŃCZYĆ KURS CL <span class="priority">1</span>
-            <form>
-                <input type="checkbox" class="doneBox" name="doneBox" value="doneBox" />
-            </form>
+            <h2>Zadania:</h2>
+            <button class="btn" id="delAllBtn">Kasuj zadania</button>
         </header>
-        <div class="deadline">
-            Zakończenie za: <span class="deadline closeToFinish">3 DNI</span>
-        </div>
-        <div class="description">
-            OPIS:
-        </div>
+        <ul class="taskItems">
+            <li class="task">
+                <span class="topic">SKOŃCZYĆ KURS CL</span>
+                <span class="priority">1</span>
+                <input type="checkbox" class="doneBox" name="doneBox">
+                <a href="#" class="deleteTask"><i class="delIcon"></i><span>kasuj</span></a>
+                <div class="details">
+                    <div class="deadline">
+                        Zakończenie za: <span class="deadline closeToFinish">3 DNI</span>
+                     </div>
+                    <div class="description">
+                        <h3>Opis:</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </li>
+        </ul>`
     </section>
 </body>
 </html>
