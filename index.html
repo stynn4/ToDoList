@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo or NotToDo</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">LISTA ZADAŃ</h1>
+        <button class="btn addTaskBtn">NOWE ZADANIE</button>
+    </header>
+    <!--FORMULARZ DODAWANIA NOWEGO ZADANIA-->
+    <section class="newTask">
+        <fieldset>
+            <legend>Nowe Zadanie</legend>
+                <label>Temat Zadania: <br>
+                    <input type="text" name="topic"/>
+                </label> <br>
+                <label>Termin: <br>
+                    <input type="date" name="deadline"/>
+                </label> <br>
+                <label>Priorytet: <br/>
+                    <input type="radio" name="priority" value="1"/> 1
+                    <input type="radio" name="priority" value="2"/> 2
+                    <input type="radio" name="priority" value="3"/> 3
+                    <input type="radio" name="priority" value="4"/> 4
+                    <input type="radio" name="priority" value="5"/> 5
+                 </label> <br>
+                <label>Opis: <br>
+                    <textarea name="description" cols="30" rows="4" placeholder="Tutaj krótko opisz zadanie..."></textarea>
+                </label>
+                <button id="addTaskBtn">Dodaj Zadanie</button>
+        </fieldset>
+    </section>
+    <!--WSTĘPNY WYGLĄD HTML-->
+    <section id="sort">
+        <button class="btn" id="expBtn">TERMIN</button>
+        <button class="btn" id="priorityBtn">PRIORYTET</button>
+        <button class="btn" id="doneBtn">ZROBIONE</button>
+    </section>
+    <section class="tasks">
+        <header>
+            <h2>Zadania:</h2>
+            <button class="btn" id="delAllBtn">Kasuj zadania</button>
+        </header>
+        <ul class="taskItems">
+            <li class="task">
+                <span class="topic">SKOŃCZYĆ KURS CL</span>
+                <span class="priority">1</span>
+                <input type="checkbox" class="doneBox" name="doneBox">
+                <a href="#" class="deleteTask"><i class="delIcon"></i><span>kasuj</span></a>
+                <div class="details">
+                    <div class="deadline">
+                        Zakończenie za: <span class="deadline closeToFinish">3 DNI</span>
+                     </div>
+                    <div class="description">
+                        <h3>Opis:</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </li>
+        </ul>`
+    </section>
+</body>
+</html>
