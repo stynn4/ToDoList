@@ -3,48 +3,54 @@
 <head>
     <title>ToDo or NotToDo</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/main.css">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
 </head>
 <body>
     <header>
         <h1 class="logo">LISTA ZADAŃ</h1>
-        <button class="btn addTaskBtn">NOWE ZADANIE</button>
+        <button class="btn addTaskBtn">Nowe zadanie</button>
     </header>
     <!--FORMULARZ DODAWANIA NOWEGO ZADANIA-->
     <section class="newTask">
-        <fieldset>
-            <legend>Nowe Zadanie</legend>
-                <label>Temat Zadania: <br>
-                    <input type="text" name="topic"/>
-                </label> <br>
-                <label>Termin: <br>
-                    <input type="date" name="deadline"/>
-                </label> <br>
-                <label>Priorytet: <br/>
-                    <input type="radio" name="priority" value="1"/> 1
-                    <input type="radio" name="priority" value="2"/> 2
-                    <input type="radio" name="priority" value="3"/> 3
-                    <input type="radio" name="priority" value="4"/> 4
-                    <input type="radio" name="priority" value="5"/> 5
-                 </label> <br>
-                <label>Opis: <br>
-                    <textarea name="description" cols="30" rows="4" placeholder="Tutaj krótko opisz zadanie..."></textarea>
+        <form id="newTaskForm">
+                <label for="topic">Temat Zadanie:</label>
+                <input id="topic" type="text" name="topic">
+                
+                <label for="deadline">Termin:</label>
+                <input id="deadline" type="date" name="deadline">
+                
+                <label id="priority">Priorytet:
+                    <input type="radio" name="priority" value="1" checked> 1
+                    <input type="radio" name="priority" value="2"> 2
+                    <input type="radio" name="priority" value="3"> 3
+                    <input type="radio" name="priority" value="4"> 4
+                    <input type="radio" name="priority" value="5"> 5
                 </label>
+                
+                <label for="decription">Opis:</label>
+                <textarea id="description" name="description" cols="30" rows="4" placeholder="Tutaj krótko opisz zadanie..."></textarea>
+                
                 <button id="addTaskBtn">Dodaj Zadanie</button>
-        </fieldset>
+        </form>
     </section>
     <!--WSTĘPNY WYGLĄD HTML-->
+    
     <section id="sort">
+        <header>
+            <h3>Sortuj</h3>
+        </header>
         <button class="btn" id="expBtn">TERMIN</button>
         <button class="btn" id="priorityBtn">PRIORYTET</button>
         <button class="btn" id="doneBtn">ZROBIONE</button>
     </section>
+    
+    
     <section class="tasks">
         <header>
-            <h2>Zadania:</h2>
+            <h2>Zadania:</h2>    
             <button class="btn" id="delAllBtn">Kasuj zadania</button>
         </header>
-        <ul class="taskItems">
+        <ul>
             <li class="task">
                 <span class="topic">SKOŃCZYĆ KURS CL</span>
                 <span class="priority">1</span>
@@ -53,14 +59,67 @@
                 <div class="details">
                     <div class="deadline">
                         Zakończenie za: <span class="deadline closeToFinish">3 DNI</span>
-                     </div>
+                    </div>
                     <div class="description">
                         <h3>Opis:</h3>
-                        <p></p>
+                        <p>
+
+                        </p>
                     </div>
                 </div>
             </li>
-        </ul>`
+            <li class="task">
+                <span class="topic">Kupić chleb</span>
+                <span class="priority">1</span>
+                <input type="checkbox" class="doneBox" name="doneBox">
+                <a href="#" class="deleteTask"><i class="delIcon"></i><span>kasuj</span></a>
+                <div class="details">
+                    <div class="deadline">
+                        Zakończenie za: <span class="deadline closeToFinish">3 DNI</span>
+                    </div>
+                    <div class="description">
+                        <h3>Opis:</h3>
+                        <p>
+                            Jeden normalny, jeden w kształcie ciasteczkowego ludzika i jeden w kształcie bułki.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="task">
+                <span class="topic">Pomalować trawę w ogródku</span>
+                <span class="priority">1</span>
+                <input type="checkbox" class="doneBox" name="doneBox">
+                <a href="#" class="deleteTask"><i class="delIcon"></i><span>kasuj</span></a>
+                <div class="details">
+                    <div class="deadline">
+                        Zakończenie za: <span class="deadline closeToFinish">5 DNI</span>
+                    </div>
+                    <div class="description">
+                        <h3>Opis:</h3>
+                        <p>
+                            Na pomarańczowo bo zielony jest już nudny.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="task">
+                <span class="topic">Naostrzyć miecz</span>
+                <span class="priority">1</span>
+                <input type="checkbox" class="doneBox" name="doneBox">
+                <a href="#" class="deleteTask"><i class="delIcon"></i><span>kasuj</span></a>
+                <div class="details">
+                    <div class="deadline">
+                        Zakończenie za: <span class="deadline closeToFinish">18 DNI</span>
+                    </div>
+                    <div class="description">
+                        <h3>Opis:</h3>
+                        <p>
+                            Tylko ten dla barbarzyńców bo inne są ostre.
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
     </section>
 </body>
 </html>
