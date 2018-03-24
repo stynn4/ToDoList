@@ -33,10 +33,12 @@ function deadlineCounter(futureDate) {
 //  Funkcja tworzy element listy obiektów przekazuje im nowo wprawadzone dane i dodaje
 //  element do listy zadań na stronie.
 //  Uwagi - na razie w uproszczonej formie tylko dla tematu zadania
-function createNewTask() {
+function createNewTask(e) {
+  e.preventDefault();
+
   let taskForm = document.querySelector('#newTaskForm');
   let taskTopicInput = document.querySelector('.newTask #topic');
-  let taskUl = document.querySelector('.tasks ul');
+  let tasksListUl = document.querySelector('.tasks ul');
   // let deadlineInput = document.querySelector('.newTask #deadline');
   // let priority = document.querySelector('.newTask #priority input[checked]').value;
   // let description = document.querySelector('.newTask #description').value;
@@ -69,6 +71,6 @@ function createNewTask() {
     deleteTaskA.appendChild(deleteIconI);
     newTaskLi.appendChild(topicSpan);
     newTaskLi.appendChild(deleteTaskA);
-    taskUl.appendChild(newTaskLi);
+    tasksListUl.appendChild(newTaskLi);
   }
 }
